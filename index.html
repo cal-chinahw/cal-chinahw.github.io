@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<style>
+    * {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+:root {
+    --clr: #ffffff;
+}
+body {
+    width: 100%;
+    min-height: 100vh;
+    background: var(--clr);
+    display: flex;
+    overflow: hidden;
+    justify-content: center;
+    align-items: center;
+}
+.container {
+    position: relative;
+    margin-top: auto;
+    width: 500px;
+    height: 800px;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: center;
+    animation: 2s cubic-bezier(.17,.8,.76,.96) bounceInUp forwards;
+}
+@keyframes bounceInUp {
+    from {
+        opacity: 0;
+        transform: translateY(55vh);
+    }
+    10% {
+        opacity: 1;
+        transform: translateY(12px);
+    }
+    15% {
+        opacity: 1;
+        transform: translateY(0px);
+    }
+    40% {
+        opacity: 1;
+        transform: translateY(230px) scale(2);
+    }
+    85%{
+        opacity: 1;
+        transform: translateY(230px) scale(2);
+    }
+    99% {
+        opacity: 1;
+        transform: translateY(290px) scale(2) ;
+    }
+    100%{
+        opacity: 1;
+        transform: translateY(290px) scale(2);
+    }
+}
+.container .letter-wrapper {
+    position: relative;
+    width: 100%;
+    height: 360px;
+    background-image: url(https://github.com/cal-chinahw/cal-chinahw.github.io/blob/main/images/bg.png?raw=true);
+    background-repeat: no-repeat;
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+}
+.container .letter-wrapper .cover {
+    position: absolute;
+    width: 100%;
+    height: 210px;
+    z-index: 5;
+    background-image: url(https://github.com/cal-chinahw/cal-chinahw.github.io/blob/main/images/cover-front.png?raw=true);
+    background-position: 0;
+    background-repeat: no-repeat;
+    background-size: cover;
+    top: 0;
+    animation: .5s .3s forwards rollingOver;
+    transform-origin: 0 5px;
+}
+@keyframes rollingOver {
+    from{
+        background-image: url(https://github.com/cal-chinahw/cal-chinahw.github.io/blob/main/images/cover-front.png?raw=true);
+        transform: rotateX(0deg);
+    }
+    50% {
+        background-image: url(https://github.com/cal-chinahw/cal-chinahw.github.io/blob/main/images/cover-front.png?raw=true);
+        transform: rotateX(-90deg);
+    }
+    100% {
+        z-index: 2;
+        background-image: url(https://github.com/cal-chinahw/cal-chinahw.github.io/blob/main/images/cover-back.png?raw=true);
+        transform: rotateX(-180deg);
+    }
+}
+.container .letter-wrapper .letter {
+    position: absolute;
+    z-index: 3;
+    width: 450px;
+    height: 500px;
+    margin: 2px;
+    padding: 35px 35px 350px;
+    background: #fff;
+    border-radius: 16px;
+    box-shadow: 2px 5px 10px #000;
+    transform: translateY(180px);
+    animation: 1.7s 1.7s forwards letterBounceInUp;
+}
+@keyframes letterBounceInUp {
+    from {
+        opacity: 0;
+        transform: translateY(180px);
+    }
+    20% {
+        opacity: 1;
+        transform: translateY(-220px);
+    }
+    30% {
+        transform: translateY(-200px);
+    }
+    90% {
+        transform: translateY(-200px);
+    }
+    100% {
+        transform: translateY(-200px);
+    }
+}
+.container .letter-wrapper .letter p {
+    font-size: 18px;
+    line-height: 1.6;
+    color: #213547;
+    margin: 10px 0;
+}
+.container .letter-wrapper .letter p:first-child::first-letter {
+    font-size: 60px;
+    line-height: 1;
+    float: left;
+    margin-right: 8px;
+}
+.container .letter-wrapper .letter span {
+    position: absolute;
+    font-size: 24px;
+    font-weight: 700;
+    top: 20px;
+    right: 26px;
+    opacity: .1;
+}
+.container .letter-wrapper .envelope {
+    position: absolute;
+    width: 500px;
+    height: 360px;
+    z-index: 4;
+    background-image: url(./images/envelope.png);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: center;
+    padding-bottom: 40px;
+    font-size: 24px;
+    color: #000;
+}
+.container .letter-wrapper .envelope b {
+    opacity: .3;
+}
+.container .letter-wrapper .envelope small {
+    opacity: .3;
+    font-weight: 200;
+}
+.hidden{
+    opacity: 0; 
+    display: none; 
+}
+
+</style>
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS Animation Envelop</title>
+</head>
+<body>
+    <div class="container">
+        <div class="letter-wrapper">
+            <div class="cover"></div>
+            <div class="letter">
+                <p>Title</p>
+                <p>Line 1</p>
+                <p>Line 2</p>
+                <p>Line 3</p>
+                <p>Line 4</p>
+                <p>Line 5</p>
+                <p>Line 6</p>
+                <span>Mark</span>
+            </div>
+            <div class="envelope">
+                <b>新年快乐！</b>
+                <small>杭外剑桥高中学理会</small>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
