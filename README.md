@@ -1,2 +1,2 @@
 # cal-chinahw.github.io
-## we are here to celebrate our new year!
+## Welcome to our pages!
